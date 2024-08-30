@@ -1,0 +1,142 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Add Property</legend>
+            <!-- Property Image Field -->
+            <div class="form-group">
+                {{ form.propertyImage.label(class="form-control-label") }}
+                {% if form.propertyImage.errors %}
+                    {{ form.propertyImage(type="file", class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.propertyImage.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.propertyImage(type="file", class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <!-- property image end -->
+
+            <!-- Property Status Field -->
+            <div class="form-group">
+                {{ form.propertyStatus.label(class="form-control-label") }}
+                {% if form.propertyStatus.errors %}
+                    {{ form.propertyStatus(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.propertyStatus.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.propertyStatus(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <!-- property status end -->
+
+            <!-- property type  -->
+            {{ form.property_type.label(class="form-control-label") }}
+            {% if form.property_type.errors %}
+                {{form.property_type(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.property_type.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.property_type(class="form-control form-control-lg") }}
+            {% endif %}
+            <!-- property type  end -->
+
+            <!-- property price  -->
+            {{ form.propertyPrice.label(class="form-control-label") }}
+            {% if form.propertyPrice.errors %}
+                {{form.propertyPrice(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.propertyPrice.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.propertyPrice(class="form-control form-control-lg") }}
+            {% endif %}
+            <!-- property price end -->
+
+            <!-- property name  -->
+            <!-- property name end -->
+
+            <!-- property location  -->
+            {{ form.propertyLocation.label(class="form-control-label") }}
+            {% if form.propertyLocation.errors %}
+                {{form.propertyLocation(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.propertyLocation.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.propertyLocation(class="form-control form-control-lg") }}
+            {% endif %}
+            <!-- property location end -->
+
+            <!-- property size  -->
+            {{ form.propertySize.label(class="form-control-label") }}
+            {% if form.propertySize.errors %}
+                {{form.propertySize(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.propertySize.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.propertySize(class="form-control form-control-lg") }}
+            {% endif %}
+            <!-- property size end -->
+
+            <!-- property bedrooms  -->
+            {{ form.propertyBedrooms.label(class="form-control-label") }}
+            {% if form.propertyBedrooms.errors %}
+                {{form.propertyBedrooms(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.propertyBedrooms.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.propertyBedrooms(class="form-control form-control-lg") }}
+            {% endif %}
+            <!-- property bedrooms end -->
+
+            <!-- property bathrooms  -->
+            {{ form.propertyBathrooms.label(class="form-control-label") }}
+            {% if form.propertyBathrooms.errors %}
+                {{form.propertyBathrooms(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.propertyBathrooms.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.propertyBathrooms(class="form-control form-control-lg") }}
+            {% endif %}
+            <!-- property bathrooms end -->
+
+            <!-- property type  -->
+            <!-- property type end -->
+
+            <!-- ... -->
+            <div class="rearrange">
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="border-top pt-3 pb-5 ml-7">
+    <!-- Additional links or information can go here -->
+</div>
+{% endblock %}

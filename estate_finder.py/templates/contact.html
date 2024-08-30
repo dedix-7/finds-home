@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-md-10">
+                <div class="row g-2">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control border-0 py-3" placeholder="Search Keyword">
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select border-0 py-3">
+                            <option selected>Property Type</option>
+                            <option value="1">Property Type 1</option>
+                            <option value="2">Property Type 2</option>
+                            <option value="3">Property Type 3</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select border-0 py-3">
+                            <option selected>Location</option>
+                            <option value="1">Location 1</option>
+                            <option value="2">Location 2</option>
+                            <option value="3">Location 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-dark border-0 w-100 py-3">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="bg-light rounded p-3">
+            <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="img-fluid rounded w-100"
+                            src="{{ url_for('static', filename='img/property-6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="mb-4">
+                            <h1 class="mb-3">Contact With Our Certified Agent</h1>
+                            <p>Experience a modern blend of comfort and sophistication. Temporarily immerse yourself in
+                                a realm where authenticity meets luxury, offering a unique space where your needs are
+                                met with utmost care and attention.
+                                Connect with us today for an unparalleled real estate experience.</p>
+                        </div>
+                        <a href="" class="btn btn-primary py-3 px-4 me-2" id="payNowButton"><i
+                                class="fa fa-phone-alt me-2"></i>Pay Now</a>
+                        <div>
+                        <!-- Calendly badge widget begin -->
+                        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
+                            async></script>
+                        <script
+                            type="text/javascript"> window.onload = function () { Calendly.initBadgeWidget({ url: 'https://calendly.com/briankimurgor/real-estate-booking?hide_gdpr_banner=1&primary_color=23eda3', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
+                        <!-- Calendly badge widget end -->
+
+                        <a href="" class="btn btn-dark py-3 px-4"
+                            onclick="Calendly.showPopupWidget('https://calendly.com/briankimurgor/real-estate-booking?hide_gdpr_banner=1&primary_color=23eda3');return false;"><i
+                                class="fa fa-calendar-alt me-2"></i>Get Appointment</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="bg-light rounded p-1">
+            <div class="bg-white rounded p-2" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <!--<img class="img-fluid rounded w-100" src="{{ url_for('static', filename='img/property-6.jpg') }}" alt="">-->
+                        <div class="property-item rounded overflow-hidden">
+                            
+                            <div class="position-relative overflow-hidden">
+                                {% if property.property_img.startswith('img/') %}
+                                    <img class="img-fluid" src="{{ url_for('static', filename=property.property_img) }}" alt="">
+                                {% else %}
+                                    <img class="img-fluid" src="{{ url_for('serve_uploaded_file', filename=property.property_img) }}" alt="">
+                                {% endif %}
+                                <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">{{ property.status }}</div>
+                                <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">{{ property.property_type }}</div>
+                            </div>
+                            <div class="p-4 pb-0">
+                                <h5 class="text-primary mb-3">${{ property.price }}</h5>
+                                <p><i class="fa fa-map-marker-alt text-primary me-2"></i>{{ property.location }}</p>
+                            </div>
+                            <div class="d-flex border-top">
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>{{ property.size_sqft }} sqft</small>
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>{{ property.bedrooms }} bedroom</small>
+                                <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>{{ property.bathrooms }} bathroom</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="mb-4">
+                            <h1 class="mb-3">Contact With Our Certified Agent</h1>
+                            <p>Experience a modern blend of comfort and sophistication. Temporarily immerse yourself in a realm where authenticity meets luxury, offering a unique space where your needs are met with utmost care and attention.
+                                Connect with us today for an unparalleled real estate experience.</p>
+                        </div>
+                        <a href="" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Make A Call</a>
+                        <a href="" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Get Appoinment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
