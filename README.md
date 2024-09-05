@@ -32,7 +32,7 @@ The main features of this web app, are:
 To set up and run the project on your local machine:
 - clone the repository from github
 ```bash
-    git clone https://github.com/dedix-7/Home-find.git
+    git clone https://github.com/dedix-7/finds-home.git
 ```
 
 
